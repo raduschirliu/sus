@@ -1,0 +1,47 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: none;
+  display: grid;
+  grid-template-rows: 20% 1fr;
+  grid-template-columns: 100%;
+}
+
+.title {
+  height: 40px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 40px;
+  margin: auto;
+  margin-bottom: 0px;
+}
+
+.urlInput {
+  grid-row: 2;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.urlField {
+  margin-bottom: 20px !important;
+}
+
+.urlResult {
+  grid-row: 2;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
