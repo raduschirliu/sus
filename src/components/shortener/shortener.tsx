@@ -1,13 +1,22 @@
 import React, { useState, ChangeEvent, ReactNode } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import styles from './shortener.module.scss';
+import api from '../../api/api';
+import Link from '../../models/link';
 
 const Shortener = () => {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
 
   const shorten = (): void => {
-    setShortUrl('asdf');
+    api.shorten(url)
+      .then((res: any) => {
+        setShortUrl(res.id);
+      })
+      .catch(err => {
+        setShortUrl("");
+        console.error(err);
+      });
   }
 
   const reset = (): void => {
@@ -17,11 +26,12 @@ const Shortener = () => {
 
   const displayContent = (): ReactNode => {
     if (shortUrl === '') return null;
+    const fullShortUrl = window.location + shortUrl
 
     return (
       <>
         <h3>Your converted URL:</h3>
-        <a href={shortUrl}>{shortUrl}</a>
+        <a href={fullShortUrl}>{fullShortUrl}</a>
         <Button color='primary' onClick={reset}>Clear</Button>
       </>
     );
