@@ -40,6 +40,11 @@
   flex-direction: column;
   text-align: center;
 
+  .loader {
+    width: fit-content;
+    margin: auto;
+  }
+
   a {
     margin-top: 10px;
     margin-bottom: 10px;
