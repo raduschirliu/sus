@@ -12,7 +12,7 @@ To run the server, the following environment variables need to be set first:
 ```bash
 REACT_APP_API_URL=https://xxxxxx
 ```
-These can also be loaded from a .env file placed in the root directory.  
+These can also be loaded from a `.env` file placed in the root directory.  
 
 The client can then be started in development mode by running:
 ```bash
